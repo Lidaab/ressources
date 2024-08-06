@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos ressources</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&family=Oswald:wght@300;500&display=swap');
+
+        body {
+            font-family: 'Chivo', Arial, sans-serif;
+            background-color: #fdd7cf;
+            color: #cf3d26;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffd8d2;
+            padding: 20px 0;
+            font-family: 'Oswald', sans-serif;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header img.logo {
+            height: 50px;
+        }
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+        header nav a {
+            color: #000;
+            text-decoration: none;
+            font-size: 16px;
+            font-family: 'Oswald', sans-serif;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        header nav .cta {
+            border: 2px solid #cf3d26;
+            padding: 5px 10px;
+            color: #cf3d26;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        header nav .cta:hover {
+            background-color: #cf3d26;
+            color: #fff;
+        }
+        
+        .introduction {
+            background-color: #cf3d26;
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 100px;
+        }
+        .introduction h1 {
+            margin: 0;
+            font-size: 36px;
+            font-family: 'Oswald', sans-serif;
+        }
+        .introduction p {
+            margin: 5px 0 0;
+            font-size: 18px;
+            font-family: 'Chivo', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .filter button {
+            background-color: #fff;
+            border: 2px solid #cf3d26;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-family: 'Oswald', sans-serif;
+        }
+        .filter button:hover, .filter button.active {
+            background-color: #cf3d26;
+            color: #fff;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #cf3d26;
+            width: 300px;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            font-family: 'Chivo', sans-serif;
+            position: relative;
+            padding-bottom: 110px; /* espace pour le tag et le bouton */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+        .card h3 {
+            margin: 10px 0;
+            font-size: 24px;
+            font-family: 'Oswald', sans-serif;
+        }
+        .card p {
+            font-size: 14px;
+            color: #666;
+        }
+        .card .tag {
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            padding: 5px 10px;
+            display: inline-block;
+            position: absolute;
+            bottom: 70px;
+            left: 20px;
+            font-size: 14px;
+        }
+        .card button {
+            background-color: #cf3d26;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            font-family: 'Oswald', sans-serif;
+        }
+        .card button:hover {
+            background-color: #555;
+        }
+        .form-section {
+            background-color: #FBF3B2;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .form-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #cf3d26;
+        }
+        .form-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            border: 2px solid #cf3d26;
+        }
+        .form-container input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #cf3d26;
+            border-radius: 5px;
+            font-family: 'Chivo', sans-serif;
+        }
+        .form-container button {
+            background-color: #cf3d26;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            width: calc(100% - 20px);
+            transition: background-color 0.3s ease;
+        }
+        .form-container button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #cf3d26;
+            color: #fff;
+            padding: 40px 0;
+            font-family: 'Oswald', sans-serif;
+        }
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        footer .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 20px 0;
+        }
+        footer .footer-section h4 {
+            margin-bottom: 15px;
+        }
+        footer .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        footer .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+        footer .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+        footer .social-icons a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+        }
+        footer .social-icons a:hover {
+            color: #555;
+        }
+        footer .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        footer .certifications img {
+            height: 50px;
+        }
+        footer img.logo {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="https://adatechschool.fr/app/uploads/2022/05/icn_logo_ada@2x.png" alt="Logo" class="logo">
+            <nav>
+                <a href="https://adatechschool.fr/ecole/">Ecole</a>
+                <a href="https://adatechschool.fr/programme/">Programme</a>
+                <a href="https://adatechschool.fr/campus-paris/">Nos Campus</a>
+                <a href="https://adatechschool.fr/financement/">Financement</a>
+                <a href="https://adatechschool.fr/entreprise/">Entreprise</a>
+                <a href="https://adatechschool.fr/evenement/">Nos événements</a>
+                <a href="https://ressources.adatechschool.fr/">Ressources</a>
+                <a href="https://blog.adatechschool.fr/">Blog</a>
+                <a href="https://adatechschool.fr/candidater-ecole-dinformatique/" class="cta">Candidater</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="introduction">
+        <h1>Nos ressources</h1>
+        <p>Découvre toutes nos ressources pour te lancer dans la programmation</p>
+    </div>
+
+    <div class="container">
+        <div class="filter">
+            <button class="active" data-filter="all">Tous</button>
+            <button data-filter="coding-workshops">Ateliers de code</button>
+            <button data-filter="webinar">Webinar</button>
+            <button data-filter="beginner-kit">Kit débutant</button>
+            <button data-filter="quiz">Quiz</button>
+            <button data-filter="testimony">Témoignages</button>
+        </div>
+        <div class="cards">
+            <div class="card" data-category="quiz">
+                <img src="https://adatechschool.fr/app/uploads/2024/06/BANNIÈRE-BLOG-1.png" alt="Atelier de code">
+                <h3>Le métier de développeur·se est-il fait pour moi ?</h3>
+                <p>En répondant à quelques questions, tu sauras en 5 minutes si le métier de développeur·se pourrait te plaire !</p>
+                <span class="tag">Quiz</span>
+                <button onclick="window.location.href='https://adatechschool.fr/quiz-metier-developpeur/'">Télécharger</button>
+            </div>
+            <div class="card" data-category="webinar">
+                <img src="https://adatechschool.fr/app/uploads/2024/06/Comment-dépasser-le-syndrome-de-limposteur-2.png" alt="Webinar">
+                <h3>Comment dépasser le syndrome de l'imposteur ?</h3>
+                <p>Anaïs, développeuse et encadrante chez Ada Tech School, partage son expérience lors de ce webinar. Dans le domaine de l'informatique, où les femmes sont souvent sous-représentées, il peut être particulièrement difficile de se sentir légitime et de trouver sa place.</p>
+                <span class="tag">Webinar</span>
+                <button onclick="window.location.href='https://adatechschool.fr/syndromedelimposteur/'">Télécharger</button>
+            </div>
+            <div class="card" data-category="beginner-kit">
+                <img src="https://adatechschool.fr/app/uploads/2024/06/Kit-débutant-1.png" alt="Kit débutant">
+                <h3>Kit débutant</h3>
+                <p>Tous les outils pour te lancer dans la programmation</p>
+                <span class="tag">Kit débutant</span>
+                <button onclick="window.location.href='https://adatechschool.fr/kit-debutant/'">Télécharger</button>
+            </div>
+            <div class="card" data-category="quiz">
+                <img src="https://adatechschool.fr/app/uploads/2024/06/BANNIÈRE-BLOG-4.png" alt="Quiz">
+                <h3>Quel métier tech est fait pour toi ?</h3>
+                <p>Réponds à ces quelques questions, tu sauras en 5 minutes quel métier correspond le mieux à ton profil !</p>
+                <span class="tag">Quiz</span>
+                <button onclick="window.location.href='https://adatechschool.fr/quel-metier-tech/'">Commencer</button>
+            </div>
+            
+            <!-- Ajout des nouvelles ressources -->
+            <div class="card" data-category="coding-workshops">
+                <img src="https://i.ytimg.com/vi/Ki7tZfDfsrM/hqdefault.jpg" alt="Atelier de code">
+                <h3>Code un clone de Discord en Python avec le youtubeur Graven !</h3>
+                <p>Apprends à coder un clone de Discord en Python avec Graven.</p>
+                <span class="tag">Atelier de code</span>
+                <button onclick="window.open('https://www.youtube.com/watch?v=Ki7tZfDfsrM&t=16s')">Regarder la vidéo</button>
+            </div>
+            <div class="card" data-category="coding-workshops">
+                <img src="https://i.ytimg.com/vi/axO2X7AbKiI/maxresdefault.jpg" alt="Atelier de code">
+                <h3>Apprends à coder en 1h avec Fred, encadrant d'Ada Tech School !</h3>
+                <p>Initiation à la programmation avec Fred d'Ada Tech School.</p>
+                <span class="tag">Atelier de code</span>
+                <button onclick="window.open('https://www.youtube.com/watch?v=axO2X7AbKiI&t=29s')">Regarder la vidéo</button>
+            </div>
+            <div class="card" data-category="testimony">
+                <img src="https://i.ytimg.com/vi/vfuozWN12PA/hqdefault.jpg" alt="Témoignage">
+                <h3>Se lancer dans le développement web après une Licence de Lettre I Témoignage de Délhia</h3>
+                <p>Délhia partage son parcours de reconversion vers le développement web.</p>
+                <span class="tag">Témoignage</span>
+                <button onclick="window.open('https://www.youtube.com/watch?v=vfuozWN12PA&t=38s', '_blank')">Regarder la vidéo</button>
+
+            </div>
+            <div class="card" data-category="testimony">
+                <img src="https://i.ytimg.com/vi/R3Isfamc1p4/maxresdefault.jpg" alt="Témoignage">
+                <h3>Reconversion : du tourisme au développement web I Témoignage de Marine</h3>
+                <p>Marine raconte sa transition du tourisme au développement web.</p>
+                <span class="tag">Témoignage</span>
+                <button onclick="window.open('https://www.youtube.com/watch?v=R3Isfamc1p4')">Regarder la vidéo</button>
+            </div>
+            <div class="card" data-category="testimony">
+                <img src="https://i.ytimg.com/vi/G_h--0R2GC8/maxresdefault.jpg" alt="Témoignage">
+                <h3>Reconversion : De chargé d'études à développeur web I Témoignage de Romain</h3>
+                <p>Romain partage son expérience de reconversion professionnelle.</p>
+                <span class="tag">Témoignage</span>
+                <button onclick="window.open('https://youtu.be/G_h--0R2GC8?si=SS03z446aernhugE', '_blank')">Regarder la vidéo</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <h2>Une question ? </h2>
+        <div class="form-container">
+            <form action="https://meetings.hubspot.com/khalida-boudjema/call-coaching-?uuid=016bd3a4-a20b-4f11-8d79-7d2928896e6b">
+                <input type="text" name="prenom" placeholder="Prénom" required>
+                <input type="email" name="email" placeholder="Mail" required>
+                <input type="tel" name="telephone" placeholder="Téléphone" required>
+                <button type="submit">Prendre un rendez-vous gratuit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="https://adatechschool.fr/app/uploads/2022/05/Mask-group.png" alt="Logo" class="logo">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p>01 44 53 90 92</p>
+            </div>
+            <div class="footer-section">
+                <h4>À propos</h4>
+                <ul>
+                    <li><a href="https://adatechschool.fr/qui-sommes-nous/">Qui sommes-nous ?</a></li>
+                    <li><a href="https://adatechschool.fr/financement/">Le prix de la formation</a></li>
+                    <li><a href="https://blog.adatechschool.fr/ada-tech-school-un-diplome-detat/">Le diplôme</a></li>
+                    <li><a href="https://www.welcometothejungle.com/fr/companies/ada-tech-school">Nous rejoindre</a></li>
+                    <li><a href="https://adatechschool.fr/faq/">FAQ</a></li>
+                    <li><a href="https://adatechschool.fr/mentions-legales/">Mentions légales</a></li>
+                    <li><a href="https://adatechschool.fr/plan-du-site/">Plan du site</a></li>
+                    <li><a href="https://adatechschool.fr/candidature-bourse-lovelace/">Bourse Lovelace</a></li>
+                    <li><a href="https://adatechschool.fr/ada-tech-school-remporte-lappel-a-projet-de-lue-pour-loperation-informatique-et-inclusion/">Ada cofinancée par l'UE</a></li>
+                    <li><a href="https://hubs.ly/Q02BxM8m0">Certificat Qualiopi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Pédagogie</h4>
+                <ul>
+                    <li><a href="https://blog.adatechschool.fr/pourquoi-notre-pedagogie-est-elle-unique/">L'école Montessori de la Tech</a></li>
+                    <li><a href="https://blog.adatechschool.fr/les-badges-systeme-de-validation-de-competences-made-by-ada-tech-school/">Le système de badges</a></li>
+                    <li><a href="https://blog.adatechschool.fr/une-semaine-type-dans-notre-ecole-informatique/">Une semaine type</a></li>
+                    <li><a href="https://blog.adatechschool.fr/avis-de-nos-apprenantes/">Les avis sur l'école</a></li>
+                    <li><a href="https://adatechschool.fr/kit-debutant/">Le Kit débutant</a></li>
+                    <li><a href="https://adatechschool.fr/quiz-metier-developpeur/">Développeur·se est-ce fait pour moi ?</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="https://adatechschool.fr/evenement/">Nos événements</a></li>
+                    <li><a href="https://adatechschool.fr/femmes-informatique/">Les chiffres clés du numérique</a></li>
+                    <li><a href="https://adatechschool.fr/femmes-informatique/">Les femmes et l'informatique</a></li>
+                    <li><a href="https://blog.adatechschool.fr/la-diversite-en-entreprise-offre-une-meilleure-performance-focus-sur-les-metiers-de-linformatique/">La diversité en entreprise</a></li>
+                    <li><a href="https://blog.adatechschool.fr/quotidien-developpeuse-full-remote/">Le quotidien d'un·e développeur·se</a></li>
+                    <li><a href="https://blog.adatechschool.fr/comment-reussir-son-entretien-dans-une-ecole-informatique/">Préparer son entretien</a></li>
+                    <li><a href="https://blog.adatechschool.fr/criteres-de-selection-ada-tech-school/">Les critères de sélection</a></li>
+                    <li><a href="https://adatechschool.fr/summer-school/">Summer School</a></li>
+                </ul>
+            </div>
+            <div class="footer-section certifications">
+                <img src="https://adatechschool.fr/app/uploads/2023/11/offre_eligible_mcf_CPF_carre_fond_blanc_RVB.png" alt="Certification 1">
+                <img src="https://adatechschool.fr/app/uploads/2022/05/logo_francecompetences.png" alt="Certification 2">
+                <img src="https://adatechschool.fr/app/uploads/2024/05/images-1.png" alt="Certification 3">
+                <img src="https://adatechschool.fr/app/uploads/2024/06/LogoQualiopi-AvecMarianne_reserve_11.png" alt="Qualiopi">
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.filter button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.filter button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filter = button.getAttribute('data-filter');
+                document.querySelectorAll('.card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
